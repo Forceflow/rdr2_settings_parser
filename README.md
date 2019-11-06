@@ -1,4 +1,4 @@
-# gta5settingsparser
-A simple script to parse GTA 5 settings.xml files into a readable and compact text format
+# RDR2 Settings parser
+A simple script to parse RDR2's system.xml files into a readable and compact text format
 
-Live on [http://www.forceflow.be/temp/gta5settingsparser/](http://www.forceflow.be/temp/gta5settingsparser/)
+Live on [http://www.forceflow.be/temp/rdr2_settings_parser/](http://www.forceflow.be/temp/rdr2_settings_parser/)
