@@ -99,5 +99,6 @@ function parse(){
 		return;
 	}
 	writeSettings();
+	writeLine(" ");
 	writeLine("Generated with Forceflow's RDR2 settings parser");
 }
