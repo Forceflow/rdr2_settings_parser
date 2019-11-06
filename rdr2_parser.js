@@ -66,7 +66,7 @@ function writeSettings(){
 	writeLine(videocard + ", " + api);
 	writeLine(width + " x " + height + ", " + refreshrate + "hz, Windowed: " + windowed + ", Vsync: " + vsync + ", Triple: " +triplebuffer);
 
-	// Main settings
+	// MAIN SETTINGS
 	var textures = getTextfromXML("textureQuality").split("_")[1];
 	var anisotropic = MAP_ANISO[getValuefromXML("anisotropicFiltering")];
 	var lighting = getTextfromXML("lightingQuality").split("_")[1];
@@ -80,6 +80,9 @@ function writeSettings(){
 	var volumetrics = getTextfromXML("volumetricsQuality").split("_")[1];
 	var particle = getTextfromXML("particleQuality").split("_")[1];
 	var tessellation = getTextfromXML("tessellation").split("_")[1];
+	var fxaa = yesorno(getValuefromXML("fxaaEnabled"));
+	var taa = getTextfromXML("taa").split("_")[1];
+	var msaa = getValuefromXML("msaa");
 
 	writeLine("Textures: " + textures);
 	writeLine("Anisotropic: " + anisotropic);
@@ -94,12 +97,12 @@ function writeSettings(){
 	writeLine("Volumetrics: " + volumetrics);
 	writeLine("Particles: " + particle);
 	writeLine("Tessellation: " + tessellation);
-
-	var fxaa = yesorno(getValuefromXML("fxaaEnabled"));
-	var taa = getTextfromXML("taa").split("_")[1];
-	var msaa = getValuefromXML("msaa");
-
 	writeLine("FXAA: " + fxaa + ", TAA: " + taa + ", MSAA: " + msaa);
+
+	// ADVANCED SETTINGS
+	var locked = getValuefromXML("locked");
+	writeLine("Advanced Settings Locked: " + locked)
+	if(locked == "true"){return;} // we stop here: advanced settings have been locked.
 }
 
 function parse(){
@@ -112,4 +115,11 @@ function parse(){
 	writeSettings();
 	writeLine(" ");
 	writeLine("Generated with Forceflow's RDR2 settings parser");
+}
+
+function loadExample(){
+	var client = new XMLHttpRequest();
+	client.open('GET', 'system.xml');
+	client.onreadystatechange = function() {$('textarea#inifile').val(client.responseText); parse();}
+	client.send();
 }
