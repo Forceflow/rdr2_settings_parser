@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rage__fwuiSystemSettingsCollection>
+  <version value="35" />
+  <configSource>kSettingsConfig_Auto</configSource>
+  <graphics>
+    <tessellation>kSettingLevel_High</tessellation>
+    <shadowQuality>kSettingLevel_High</shadowQuality>
+    <farShadowQuality>kSettingLevel_High</farShadowQuality>
+    <reflectionQuality>kSettingLevel_High</reflectionQuality>
+    <mirrorQuality>kSettingLevel_High</mirrorQuality>
+    <ssao>kSettingLevel_High</ssao>
+    <textureQuality>kSettingLevel_Ultra</textureQuality>
+    <particleQuality>kSettingLevel_High</particleQuality>
+    <waterQuality>kSettingLevel_Custom</waterQuality>
+    <volumetricsQuality>kSettingLevel_High</volumetricsQuality>
+    <lightingQuality>kSettingLevel_High</lightingQuality>
+    <ambientLightingQuality>kSettingLevel_High</ambientLightingQuality>
+    <anisotropicFiltering value="4" />
+    <taa>kSettingLevel_High</taa>
+    <fxaaEnabled value="false" />
+    <msaa value="0" />
+    <graphicsQualityPreset value="0.500000" />
+  </graphics>
+  <advancedGraphics>
+    <API>kSettingAPI_Vulkan</API>
+    <locked value="false" />
+    <asyncComputeEnabled value="false" />
+    <transferQueuesEnabled value="true" />
+    <shadowSoftShadows>kSettingLevel_High</shadowSoftShadows>
+    <motionBlur value="true" />
+    <motionBlurLimit value="16.000000" />
+    <particleLightingQuality>kSettingLevel_High</particleLightingQuality>
+    <waterReflectionSSR value="true" />
+    <waterRefractionQuality>kSettingLevel_High</waterRefractionQuality>
+    <waterReflectionQuality>kSettingLevel_High</waterReflectionQuality>
+    <waterSimulationQuality value="2" />
+    <waterLightingQuality>kSettingLevel_Ultra</waterLightingQuality>
+    <furDisplayQuality>kSettingLevel_High</furDisplayQuality>
+    <maxTexUpgradesPerFrame value="5" />
+    <shadowGrassShadows>kSettingLevel_High</shadowGrassShadows>
+    <shadowParticleShadows value="true" />
+    <shadowLongShadows value="true" />
+    <directionalShadowsAlpha value="false" />
+    <worldHeightShadowQuality value="0.660000" />
+    <directionalScreenSpaceShadowQuality value="0.660000" />
+    <ambientMaskVolumesHighPrecision value="true" />
+    <scatteringVolumeQuality>kSettingLevel_High</scatteringVolumeQuality>
+    <volumetricsRaymarchQuality>kSettingLevel_High</volumetricsRaymarchQuality>
+    <volumetricsLightingQuality>kSettingLevel_High</volumetricsLightingQuality>
+    <volumetricsRaymarchResolutionUnclamped value="false" />
+    <terrainShadowQuality>kSettingLevel_High</terrainShadowQuality>
+    <damageModelsDisabled value="false" />
+    <decalQuality>kSettingLevel_High</decalQuality>
+    <ssaoFullScreenEnabled value="true" />
+    <ssaoType value="0" />
+    <ssdoSampleCount value="4" />
+    <ssdoUseDualRadii value="false" />
+    <ssdoResolution>kSettingLevel_Low</ssdoResolution>
+    <ssdoTAABlendEnabled value="true" />
+    <ssroSampleCount value="2" />
+    <snowGlints value="true" />
+    <POMQuality>kSettingLevel_High</POMQuality>
+    <probeRelightEveryFrame value="false" />
+    <scalingMode>kSettingScale_Mode1o1</scalingMode>
+    <reflectionMSAA value="0" />
+    <lodScale value="1.000000" />
+    <grassLod value="2.000000" />
+    <pedLodBias value="0.000000" />
+    <vehicleLodBias value="0.000000" />
+    <sharpenIntensity value="1.000000" />
+    <treeQuality>kSettingLevel_High</treeQuality>
+    <deepsurfaceQuality>kSettingLevel_Ultra</deepsurfaceQuality>
+  </advancedGraphics>
+  <video>
+    <adapterIndex value="0" />
+    <outputIndex value="0" />
+    <resolutionIndex value="12" />
+    <screenWidth value="1920" />
+    <screenHeight value="1080" />
+    <refreshRateIndex value="4" />
+    <refreshRateNumerator value="144" />
+    <refreshRateDenominator value="1" />
+    <windowed value="0" />
+    <vSync value="1" />
+    <tripleBuffered value="true" />
+    <pauseOnFocusLoss value="false" />
+    <constrainMousePointer value="false" />
+  </video>
+  <videoCardDescription>NVIDIA GeForce RTX 2070 SUPER</videoCardDescription>
+</rage__fwuiSystemSettingsCollection>

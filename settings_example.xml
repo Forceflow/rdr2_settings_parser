@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+<Settings>
+  <version value="27" />
+  <configSource>SMC_AUTO</configSource>
+  <graphics>
+    <Tessellation value="2" />
+    <LodScale value="1.000000" />
+    <PedLodBias value="0.200000" />
+    <VehicleLodBias value="0.000000" />
+    <ShadowQuality value="2" />
+    <ReflectionQuality value="2" />
+    <ReflectionMSAA value="0" />
+    <SSAO value="2" />
+    <AnisotropicFiltering value="16" />
+    <MSAA value="0" />
+    <MSAAFragments value="0" />
+    <MSAAQuality value="0" />
+    <TextureQuality value="1" />
+    <ParticleQuality value="2" />
+    <WaterQuality value="1" />
+    <GrassQuality value="1" />
+    <ShaderQuality value="2" />
+    <Shadow_SoftShadows value="2" />
+    <UltraShadows_Enabled value="true" />
+    <Shadow_ParticleShadows value="true" />
+    <Shadow_Distance value="1.000000" />
+    <Shadow_LongShadows value="true" />
+    <Shadow_SplitZStart value="0.930000" />
+    <Shadow_SplitZEnd value="0.890000" />
+    <Shadow_aircraftExpWeight value="0.990000" />
+    <Shadow_DisableScreenSizeCheck value="false" />
+    <Reflection_MipBlur value="true" />
+    <FXAA_Enabled value="true" />
+    <TXAA_Enabled value="false" />
+    <Lighting_FogVolumes value="true" />
+    <Shader_SSA value="true" />
+    <DX_Version value="2" />
+    <CityDensity value="1.000000" />
+    <PedVarietyMultiplier value="0.400000" />
+    <VehicleVarietyMultiplier value="0.400000" />
+    <PostFX value="0" />
+    <DoF value="false" />
+    <HdStreamingInFlight value="true" />
+    <MaxLodScale value="0.100000" />
+    <MotionBlurStrength value="0.000000" />
+  </graphics>
+  <system>
+    <numBytesPerReplayBlock value="9000000" />
+    <numReplayBlocks value="36" />
+    <maxSizeOfStreamingReplay value="1024" />
+    <maxFileStoreSize value="65536" />
+  </system>
+  <audio>
+    <Audio3d value="false" />
+  </audio>
+  <video>
+    <AdapterIndex value="0" />
+    <OutputIndex value="0" />
+    <ScreenWidth value="1920" />
+    <ScreenHeight value="1080" />
+    <RefreshRate value="59" />
+    <Windowed value="0" />
+    <VSync value="1" />
+    <Stereo value="0" />
+    <Convergence value="0.100000" />
+    <Separation value="0.000000" />
+    <PauseOnFocusLoss value="1" />
+    <AspectRatio value="0" />
+  </video>
+  <VideoCardDescription>NVIDIA GeForce GTX 680</VideoCardDescription>
+</Settings>
