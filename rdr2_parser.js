@@ -4,10 +4,7 @@
 var $xml;
 
 // define value -> setting translation
-var DX_VERSION_SETTINGS = {};
-DX_VERSION_SETTINGS["0"] = "DirectX 10";
-DX_VERSION_SETTINGS["1"] = "DirectX 10.1";
-DX_VERSION_SETTINGS["2"] = "DirectX 11";
+var MAP_ANISO = {}; MAP_ANISO["0"] = "Off";MAP_ANISO["1"] = "2x";MAP_ANISO["2"] = "4x";MAP_ANISO["3"] = "8x";MAP_ANISO["4"] = "16x";
 
 var valid_xml = true;
 
@@ -56,7 +53,7 @@ function writeLine(line){
 }
 
 function writeSettings(){
-	// Resolution
+	// Screen and API settings
 	var width = getValuefromXML("screenWidth");
 	var height = getValuefromXML("screenHeight");
 	var refreshrate = getValuefromXML("refreshRateNumerator");
@@ -66,16 +63,25 @@ function writeSettings(){
 	var pauseonfocusloss = yesorno(getValuefromXML("pauseOnFocusLoss"));
 	var videocard = getTextfromXML("videoCardDescription");
 	var api = getTextfromXML("API").split("_")[1];
-
 	writeLine(videocard + ", " + api);
 	writeLine(width + " x " + height + ", " + refreshrate + "hz, Windowed: " + windowed + ", Vsync: " + vsync + ", Triple: " +triplebuffer);
 
-	// Video card and DirectX version
-	var videocard = $xml.find("VideoCardDescription").text();
-	var dx_version = $xml.find("DX_Version").attr("value");
-	if(dx_version in DX_VERSION_SETTINGS){
-		writeLine(videocard + " - "+ DX_VERSION_SETTINGS[dx_version]);
-	}
+	// Main settings
+	var textures = getTextfromXML("textureQuality").split("_")[1];
+	var anisotropic = MAP_ANISO[getValuefromXML("anisotropicFiltering")];
+	var lighting = getTextfromXML("lightingQuality").split("_")[1];
+	var globillum = "(not found yet)"
+	var shadows = getTextfromXML("shadowQuality").split("_")[1];
+	var farshadows = getTextfromXML("farShadowQuality").split("_")[1];
+
+	writeLine("Textures: " + textures)
+	writeLine("Anisotropic: " + anisotropic)
+	writeLine("Lighting: " + lighting)
+	writeLine("Global Illumination: " + globillum)
+	writeLine("Shadows: " + shadows)
+	writeLine("Far Shadows: " + farshadows)
+
+
 	
 	// Basics: screen width and height, refresh rate, windowed mode and vsync
 	
