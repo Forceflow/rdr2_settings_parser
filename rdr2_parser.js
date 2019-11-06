@@ -99,7 +99,7 @@ function writeSettings(){
 	var taa = getTextfromXML("taa").split("_")[1];
 	var msaa = getValuefromXML("msaa");
 
-	writeLine("FXAA: " + fxaa + ", TAA : " + taa + ", MSAA: " + msaa);
+	writeLine("FXAA: " + fxaa + ", TAA: " + taa + ", MSAA: " + msaa);
 }
 
 function parse(){
