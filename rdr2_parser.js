@@ -95,10 +95,11 @@ function writeSettings(){
 	writeLine("Particles: " + particle);
 	writeLine("Tessellation: " + tessellation);
 
+	var fxaa = yesorno(getValuefromXML("fxaaEnabled"));
+	var taa = getTextfromXML("taa").split("_")[1];
+	var msaa = getValuefromXML("msaa");
 
-	
-	
-	
+	writeLine("FXAA: " + fxaa + ", TAA : " + taa + ", MSAA: " + msaa);
 }
 
 function parse(){
