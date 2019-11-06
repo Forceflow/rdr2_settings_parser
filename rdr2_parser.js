@@ -70,7 +70,7 @@ function writeSettings(){
 	var textures = getTextfromXML("textureQuality").split("_")[1];
 	var anisotropic = MAP_ANISO[getValuefromXML("anisotropicFiltering")];
 	var lighting = getTextfromXML("lightingQuality").split("_")[1];
-	var globillum = "(not found yet)"
+	var globillum = getTextfromXML("ambientLightingQuality").split("_")[1];
 	var shadows = getTextfromXML("shadowQuality").split("_")[1];
 	var farshadows = getTextfromXML("farShadowQuality").split("_")[1];
 	var ssao = getTextfromXML("ssao").split("_")[1];
