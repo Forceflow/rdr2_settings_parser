@@ -75,6 +75,11 @@ function writeSettings(){
 	var farshadows = getTextfromXML("farShadowQuality").split("_")[1];
 	var ssao = getTextfromXML("ssao").split("_")[1];
 	var reflection = getTextfromXML("reflectionQuality").split("_")[1];
+	var mirror = getTextfromXML("mirrorQuality").split("_")[1];
+	var water = getTextfromXML("waterQuality").split("_")[1];
+	var volumetrics = getTextfromXML("volumetricsQuality").split("_")[1];
+	var particle = getTextfromXML("particleQuality").split("_")[1];
+	var tessellation = getTextfromXML("tessellation").split("_")[1];
 
 	writeLine("Textures: " + textures);
 	writeLine("Anisotropic: " + anisotropic);
@@ -83,7 +88,12 @@ function writeSettings(){
 	writeLine("Shadows: " + shadows);
 	writeLine("Far Shadows: " + farshadows);
 	writeLine("SSAO: " + ssao);
-	writeLine("Reflections: " + reflection);
+	writeLine("Reflection: " + reflection);
+	writeLine("Mirror: " + mirror);
+	writeLine("Water: " + water);
+	writeLine("Volumetrics: " + volumetrics);
+	writeLine("Particles: " + particle);
+	writeLine("Tessellation: " + tessellation);
 
 
 	
