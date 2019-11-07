@@ -26,7 +26,7 @@ function getTextfromXML(a) {
 }
 
 function int_to_yesno(value) {
-	if (value == 0) { return "Yes"; } else { return "No"; }
+	if (value == "1") { return "Yes"; } else { return "No"; }
 }
 
 function bool_to_onoff(value) {
@@ -64,9 +64,9 @@ function writeSettings() {
 	var width = getValuefromXML("screenWidth");
 	var height = getValuefromXML("screenHeight");
 	var refreshrate = getValuefromXML("refreshRateNumerator");
-	var vsync = int_to_yesno(getValuefromXML("Vsync"));
-	var windowed = int_to_yesno(getValuefromXML("Windowed"));
-	var triplebuffer = int_to_yesno(getValuefromXML("tripleBuffered"));
+	var vsync = int_to_yesno(getValuefromXML("vSync"));
+	var windowed = int_to_yesno(getValuefromXML("windowed"));
+	var triplebuffer = bool_to_onoff(getValuefromXML("tripleBuffered"));
 	var pauseonfocusloss = int_to_yesno(getValuefromXML("pauseOnFocusLoss"));
 	var videocard = getTextfromXML("videoCardDescription");
 	var api = getTextfromXML("API").split("_")[1];
