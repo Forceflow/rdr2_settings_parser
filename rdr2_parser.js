@@ -20,8 +20,14 @@ function getTextfromXML(a){
 	return $xml.find(a).text();
 }
 
-function yesorno(value){
-	if(value == 0){return "yes";}else{return "no";}
+function int_to_yesno(value){
+	if(value == 0){return "Yes";}else{return "No";}
+}
+
+function bool_to_onoff(value){
+	if(value = "true"){return "On";}
+	if(value = "false"){return "Off";}
+	return "undefined";
 }
 
 function watcharea(){
@@ -49,7 +55,7 @@ function parseXML() {
 }
 
 function writeLine(line){
-	$("#parsed").val($("#parsed").val() + line + "  \n");
+	$("#parsed").val($("#parsed").val() + line + "\n");
 }
 
 function writeSettings(){
@@ -57,10 +63,10 @@ function writeSettings(){
 	var width = getValuefromXML("screenWidth");
 	var height = getValuefromXML("screenHeight");
 	var refreshrate = getValuefromXML("refreshRateNumerator");
-	var vsync = yesorno(getValuefromXML("Vsync"));
-	var windowed = yesorno(getValuefromXML("Windowed"));
-	var triplebuffer = yesorno(getValuefromXML("tripleBuffered"));
-	var pauseonfocusloss = yesorno(getValuefromXML("pauseOnFocusLoss"));
+	var vsync = int_to_yesno(getValuefromXML("Vsync"));
+	var windowed = int_to_yesno(getValuefromXML("Windowed"));
+	var triplebuffer = int_to_yesno(getValuefromXML("tripleBuffered"));
+	var pauseonfocusloss = int_to_yesno(getValuefromXML("pauseOnFocusLoss"));
 	var videocard = getTextfromXML("videoCardDescription");
 	var api = getTextfromXML("API").split("_")[1];
 	writeLine(videocard + ", " + api);
@@ -80,7 +86,7 @@ function writeSettings(){
 	var volumetrics = getTextfromXML("volumetricsQuality").split("_")[1];
 	var particle = getTextfromXML("particleQuality").split("_")[1];
 	var tessellation = getTextfromXML("tessellation").split("_")[1];
-	var fxaa = yesorno(getValuefromXML("fxaaEnabled"));
+	var fxaa = int_to_yesno(getValuefromXML("fxaaEnabled"));
 	var taa = getTextfromXML("taa").split("_")[1];
 	var msaa = getValuefromXML("msaa");
 
@@ -101,8 +107,36 @@ function writeSettings(){
 
 	// ADVANCED SETTINGS
 	var locked = getValuefromXML("locked");
-	writeLine("Advanced Settings Locked: " + locked)
+	writeLine("ADVANCED SETTINGS Locked: " + locked)
 	if(locked == "true"){return;} // we stop here: advanced settings have been locked.
+
+	var near_volum = "TODO";
+	var far_volum = "TODO";
+	var volum_quality = getTextfromXML("volumetricsLightingQuality").split("_")[1];
+	var particle_lighting = getTextfromXML("particleLightingQuality").split("_")[1];
+	var unlock_volum_res = bool_to_onoff(getValuefromXML("volumetricsRaymarchResolutionUnclamped"));
+	var soft_shadows = getTextfromXML("shadowSoftShadows").split("_")[1];
+	var grass_shadows = getTextfromXML("shadowGrassShadows").split("_")[1];
+	var long_shadows = bool_to_onoff(getValuefromXML("shadowLongShadows"));
+	var full_res_ssao = bool_to_onoff(getValuefromXML("ssaoFullScreenEnabled"));
+	var water_refraction = getTextfromXML("waterRefractionQuality").split("_")[1];
+	var water_reflection = getTextfromXML("waterReflectionQuality").split("_")[1];
+	var water_physics_quality = "TODO - value is " + getValuefromXML("waterSimulationQuality");
+	var res_scale = "TODO - value is " + getTextfromXML("scalingMode").split("_")[1];
+
+	writeLine("Near Volumetrics Quality: " + near_volum);
+	writeLine("Far Volumetric Quality: " + far_volum);
+	writeLine("Volumetric Lighting Quality: " + volum_quality);
+	writeLine("Unlocked Volumetric Raymarch Resolution: " + unlock_volum_res);
+	writeLine("Particle Lighting Quality: " + particle_lighting);
+	writeLine("Soft Shadows: " + soft_shadows);
+	writeLine("Grass Shadows: " + grass_shadows);
+	writeLine("Long Shadows: " + long_shadows);
+	writeLine("Full resolution SSAO: " + full_res_ssao);
+	writeLine("Water Refraction Quality: " + water_refraction)
+	writeLine("Water Reflection Quality: " + water_reflection)
+	writeLine("Water Physics Quality: " + water_physics_quality);
+	writeLine("Resolution scale: " + res_scale);
 }
 
 function parse(){
