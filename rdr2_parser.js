@@ -30,8 +30,8 @@ function int_to_yesno(value) {
 }
 
 function bool_to_onoff(value) {
-	if (value = "true") { return "On"; }
-	if (value = "false") { return "Off"; }
+	if (value === 'true') { return "On"; }
+	if (value === 'false') { return "Off"; }
 	return "undefined";
 }
 
@@ -84,7 +84,7 @@ function writeSettings() {
 	var volumetrics = getTextfromXML("volumetricsQuality").split("_")[1];
 	var particle = getTextfromXML("particleQuality").split("_")[1];
 	var tessellation = getTextfromXML("tessellation").split("_")[1];
-	var fxaa = int_to_yesno(getValuefromXML("fxaaEnabled"));
+	var fxaa = bool_to_onoff(getValuefromXML("fxaaEnabled"));
 	var taa = getTextfromXML("taa").split("_")[1];
 	var msaa = getValuefromXML("msaa");
 	// ADVANCED SETTINGS
