@@ -123,6 +123,7 @@ function writeSettings(){
 	var water_reflection = getTextfromXML("waterReflectionQuality").split("_")[1];
 	var water_physics_quality = "TODO - value is " + getValuefromXML("waterSimulationQuality");
 	var res_scale = "TODO - value is " + getTextfromXML("scalingMode").split("_")[1];
+	var taa_sharp = getValuefromXML("sharpenIntensity");
 
 	writeLine("Near Volumetrics Quality: " + near_volum);
 	writeLine("Far Volumetric Quality: " + far_volum);
@@ -137,6 +138,7 @@ function writeSettings(){
 	writeLine("Water Reflection Quality: " + water_reflection)
 	writeLine("Water Physics Quality: " + water_physics_quality);
 	writeLine("Resolution scale: " + res_scale);
+	writeLine("TAA Sharpen Intensity: " + taa_sharp);
 }
 
 function parse(){
