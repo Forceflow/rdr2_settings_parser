@@ -8,6 +8,7 @@ var valid_xml = true;
 
 // define value -> setting translation
 var MAP_ANISO = {}; MAP_ANISO["0"] = "Off";MAP_ANISO["1"] = "2x";MAP_ANISO["2"] = "4x";MAP_ANISO["3"] = "8x";MAP_ANISO["4"] = "16x";
+var REFL_MSAA = {}; REFL_MSAA["0"] = "Off";REFL_MSAA["1"] = "2x";REFL_MSAA["2"] = "4x";REFL_MSAA["3"] = "8x";
 
 $( document ).ready(function() {
     watcharea();
@@ -109,10 +110,10 @@ function writeSettings(){
 	// ADVANCED SETTINGS
 	var locked = getValuefromXML("locked");
 	writeLine("ADVANCED SETTINGS Locked: " + locked)
-	if(locked == "true"){return;} // we stop here: advanced settings have been locked.
+	// if(locked == "true"){return;} // we stop here: advanced settings have been locked.
 
-	var near_volum = "TODO";
-	var far_volum = "TODO";
+	var near_volum = getTextfromXML("volumetricsLightingQuality").split("_")[1]; // Todo: check correctness
+	var far_volum = getTextfromXML("volumetricsRaymarchQuality").split("_")[1]; // Todo: check correctness
 	var volum_quality = getTextfromXML("volumetricsLightingQuality").split("_")[1];
 	var particle_lighting = getTextfromXML("particleLightingQuality").split("_")[1];
 	var unlock_volum_res = bool_to_onoff(getValuefromXML("volumetricsRaymarchResolutionUnclamped"));
@@ -122,9 +123,17 @@ function writeSettings(){
 	var full_res_ssao = bool_to_onoff(getValuefromXML("ssaoFullScreenEnabled"));
 	var water_refraction = getTextfromXML("waterRefractionQuality").split("_")[1];
 	var water_reflection = getTextfromXML("waterReflectionQuality").split("_")[1];
-	var water_physics_quality = "TODO - value is " + getValuefromXML("waterSimulationQuality");
-	var res_scale = "TODO - value is " + getTextfromXML("scalingMode").split("_")[1];
+	var water_physics_quality = getValuefromXML("waterSimulationQuality");
+	var res_scale = getTextfromXML("scalingMode").split("_")[1]; // TODO: parse this better
 	var taa_sharp = getValuefromXML("sharpenIntensity");
+	var motion_blur = bool_to_onoff(getValuefromXML("motionBlur"));
+	var refl_msaa = MAP_ANISO[getValuefromXML("reflectionMSAA")];
+	var geometry_lod = "TODO"; // I think it's lodScale, but that doesn't scale linearly?
+	var grass_lod = getValuefromXML("grassLod");
+	var tree = getTextfromXML("treeQuality").split("_")[1];
+	var pom = getTextfromXML("POMQuality").split("_")[1];
+	var decal = getTextfromXML("decalQuality").split("_")[1];
+	var fur = getTextfromXML("furDisplayQuality").split("_")[1];
 
 	writeLine("Near Volumetrics Quality: " + near_volum);
 	writeLine("Far Volumetric Quality: " + far_volum);
@@ -137,9 +146,17 @@ function writeSettings(){
 	writeLine("Full resolution SSAO: " + full_res_ssao);
 	writeLine("Water Refraction Quality: " + water_refraction)
 	writeLine("Water Reflection Quality: " + water_reflection)
-	writeLine("Water Physics Quality: " + water_physics_quality);
+	writeLine("Water Physics Quality: " + water_physics_quality + " (range 0-4)");
 	writeLine("Resolution scale: " + res_scale);
-	writeLine("TAA Sharpen Intensity: " + taa_sharp);
+	writeLine("TAA Sharpen Intensity: " + taa_sharp + " (range 0-1)");
+	writeLine("Motion Blur: " + motion_blur);
+	writeLine("Reflection MSAA: " + refl_msaa);
+	writeLine("Geometry Level of Detail: " + geometry_lod);
+	writeLine("Grass Level of Detail: " + grass_lod + " (range 0-1)");
+	writeLine("Tree Quality: " + tree);
+	writeLine("Parallax Occlusion Mapping Quality: " + pom);
+	writeLine("Decal Quality: " + decal);
+	writeLine("Fur Quality: " + fur);
 }
 
 function parse(){
