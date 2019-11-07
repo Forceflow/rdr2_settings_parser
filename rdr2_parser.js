@@ -26,7 +26,7 @@ function getTextfromXML(a) {
 }
 
 function int_to_yesno(value) {
-	if (value == "1") { return "Yes"; } else { return "No"; }
+	if (value == "1") { return "Yes"; } else if(value == "0") { return "No"; } else { return "undefined";}
 }
 
 function bool_to_onoff(value) {
