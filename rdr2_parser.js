@@ -26,12 +26,14 @@ function getTextfromXML(a) {
 }
 
 function int_to_yesno(value) {
-	if (value == "1") { return "Yes"; } else if(value == "0") { return "No"; } else { return "undefined";}
+	var a = value.trim();
+	if (a == "1") { return "Yes"; } else if(a == "0") { return "No"; } else { return "undefined";}
 }
 
 function bool_to_onoff(value) {
-	if (value === 'true') { return "On"; }
-	if (value === 'false') { return "Off"; }
+	var a = value.trim();
+	if (a === 'true') { return "On"; }
+	if (a === 'false') { return "Off"; }
 	return "undefined";
 }
 
