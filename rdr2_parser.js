@@ -73,6 +73,7 @@ function writeSettings(){
 	var api = getTextfromXML("API").split("_")[1];
 	writeLine(videocard + ", " + api);
 	writeLine(width + " x " + height + ", " + refreshrate + "hz, Windowed: " + windowed + ", Vsync: " + vsync + ", Triple: " +triplebuffer);
+	writeLine("");
 
 	// MAIN SETTINGS
 	var textures = getTextfromXML("textureQuality").split("_")[1];
@@ -106,10 +107,11 @@ function writeSettings(){
 	writeLine("Particles: " + particle);
 	writeLine("Tessellation: " + tessellation);
 	writeLine("FXAA: " + fxaa + ", TAA: " + taa + ", MSAA: " + msaa);
+	writeLine("");
 
 	// ADVANCED SETTINGS
 	var locked = getValuefromXML("locked");
-	writeLine("ADVANCED SETTINGS Locked: " + locked)
+	writeLine("Advanced Settings Locked: " + locked)
 	// if(locked == "true"){return;} // we stop here: advanced settings have been locked.
 
 	var near_volum = getTextfromXML("volumetricsLightingQuality").split("_")[1]; // Todo: check correctness
