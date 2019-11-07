@@ -18,13 +18,19 @@
 <li>If you like what I do, <a href="http://paypal.me/forceflow">buy</a> me a <s>coffee</s> more games.</li>
 </ul>
 </p>
-<p><small><b>Update: 07/11 4:47 GMT: </b>Everything currently parsed correctly for the basic (non-locked) settings. Working on advanced settings, but there are some of them that don't map to an in-game slider.</small></p>
+<p><small><b>Update: 07/11 16:50 GMT: </b>All advanced settings are in. Working on parsing non-listed settings as optional feature.</small></p>
 <p></p>
 <br/>
 <table border=1>
 <tr>
 <td align="center" colspan="2">
 <button onClick="parse()">CONVERT XML TO NICE TEXT BLOCK</button>
+</td>
+</tr>
+<tr>
+<td align="center" colspan="2">
+Hide advanced settings when locked: <input type="checkbox" id="hide_advanced" onclick="parse()">
+Wrap in [QUOTE] tags: <input type="checkbox" id="quote" onclick="parse()">
 </td>
 </tr>
 <tr>
