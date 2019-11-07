@@ -1,12 +1,13 @@
-// GTA 5 settings.xml parser by Jeroen Baert
-// https://github.com/Forceflow/gta5settingsparser
+// RDR2 settings.xml parser by Jeroen Baert (based on my previous GTAV settings parser)
+// https://github.com/Forceflow/rdr2_settings_parser
+
+// LIVE VERSION AT: http://www.forceflow.be/temp/rdr2_settings_parser/
 
 var $xml;
+var valid_xml = true;
 
 // define value -> setting translation
 var MAP_ANISO = {}; MAP_ANISO["0"] = "Off";MAP_ANISO["1"] = "2x";MAP_ANISO["2"] = "4x";MAP_ANISO["3"] = "8x";MAP_ANISO["4"] = "16x";
-
-var valid_xml = true;
 
 $( document ).ready(function() {
     watcharea();
