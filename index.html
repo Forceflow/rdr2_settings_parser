@@ -11,9 +11,9 @@
 <body>
 <h2>RDR2 system.xml Settings Parser (a work in progress!)</h2>
 <p>RDR2 for PC has <b>a lot</b> of settings. Taking screenshots is clunky, so why not parse that settings file into a nice text block?</p>
-<p>Paste the contents of your RDR2 settings file (found at <em>/Users/Username/Documents/Rockstar Games/Red Dead Redemption 2/Settings/system.xml</em>) in the left area,</br>hit the button, and a nicely formatted settings block will appear on the right, ready to copy/paste into your favorite online discussion.</p>
+<p>Paste the contents of your RDR2 settings file (found at <em>/Users/Username/Documents/Rockstar Games/Red Dead Redemption 2/Settings/system.xml</em>) in the left area</br> and a nicely formatted settings block will appear on the right, ready to copy/paste into your favorite online discussion.</p>
 <p><ul>
-<li>For feedback, see <a href="https://www.reddit.com/r/reddeadredemption/comments/dsiapv/tool_rdr2_pc_settings_parser/">Reddit</a>, <a href="https://github.com/Forceflow/rdr2_settings_parser">Github</a> or <a href="http://twitter.com/jbaert">@jbaert</a>.</li>
+<li>For feedback: <a href="https://www.reddit.com/r/reddeadredemption/comments/dsiapv/tool_rdr2_pc_settings_parser/">Reddit</a>, <a href="https://github.com/Forceflow/rdr2_settings_parser">Github</a> or <a href="http://twitter.com/jbaert">@jbaert</a>.</li>
 <li>The game only saves your settings to system.xml on succesful exit.</li>
 <li>I'm following the in-game order of settings as closely as possible.</li>
 <li>If you like what I do, <a href="http://paypal.me/forceflow">buy</a> me a <s>coffee</s> more games.</li>
@@ -30,6 +30,7 @@
 <button id="filebutton" onclick="document.getElementById('file').click();"><img src="img/open.png"> Open from disk</button>
 <input type="file" style="display:none;" accept=".xml" onchange="loadFile(event)" id="file">
 <button onClick="loadExample()"><img src="img/example.png"> Load example</button>
+<button onClick="clearInput()"><img src="img/clear.png"> Clear</button>
 </td>
 <td align="center">
 <strong>Output: Parsed settings</strong>

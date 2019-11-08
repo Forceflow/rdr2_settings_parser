@@ -197,6 +197,11 @@ function loadExample() {
 	client.send();
 }
 
+function clearInput(){
+	$('textarea#inifile').val("(Paste the contents of your system.xml file here)");
+	$("#parsed").val("(A nicely formatted text block will appear here)");
+}
+
 function copyclipboard(){
 	$("#parsed").select();
 	document.execCommand('copy');
