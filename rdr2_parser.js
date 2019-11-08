@@ -225,6 +225,20 @@ var loadFile = function (event) {
 	reader.readAsText(event.target.files[0]);
 };
 
+function savetofile(){
+    var text = $("#parsed").val();
+    text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
+    var blob = new Blob([text], { type: "text/plain"});
+    var anchor = document.createElement("a");
+    anchor.download = "rdr2_settings_parsed.txt";
+    anchor.href = window.URL.createObjectURL(blob);
+    anchor.target ="_blank";
+    anchor.style.display = "none"; // just to be safe!
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+ }
+
 
 
 
