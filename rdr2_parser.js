@@ -6,11 +6,20 @@
 var $xml;
 var valid_xml = true;
 
+console.log(new Date());
 // define value -> setting translation
 var MAP_ANISO = {}; MAP_ANISO["0"] = "Off"; MAP_ANISO["1"] = "2x"; MAP_ANISO["2"] = "4x"; MAP_ANISO["3"] = "8x"; MAP_ANISO["4"] = "16x";
 var REFL_MSAA = {}; REFL_MSAA["0"] = "Off"; REFL_MSAA["1"] = "2x"; REFL_MSAA["2"] = "4x"; REFL_MSAA["3"] = "8x";
 
 $(document).ready(function () {watcharea();});
+
+// get a nice date string
+function getDate(){
+	var d = new Date();
+	var date = d.toISOString().slice(0,10);
+	var time = d.getHours() + ":" + d.getMinutes();
+	return date+" "+time;
+}
 
 function range_to_percent(val,min,max){
 	var percentage = (val-min)/(max-min) * 100;
@@ -170,7 +179,7 @@ function writeSettings() {
 	// Add little flair footer
 	if ($("#flair").is(":checked")) { 
 		writeLine(" ");
-		writeLine("Generated with Forceflow's RDR2 settings parser (https://bit.ly/2oZlIuy)");
+		writeLine("Generated on " + getDate() + " with Forceflow's RDR2 settings parser (https://bit.ly/2oZlIuy)");
 	}
 	// Close quote tags if necessary
 	if ($("#quote").is(":checked")) { writeLine("[/QUOTE]"); }
@@ -230,7 +239,7 @@ function savetofile(){
     text = text.replace(/\n/g, "\r\n"); // To retain the Line breaks.
     var blob = new Blob([text], { type: "text/plain"});
     var anchor = document.createElement("a");
-    anchor.download = "rdr2_settings_parsed.txt";
+    anchor.download = "rdr2_settings_parsed_"+getDate()+".txt";
     anchor.href = window.URL.createObjectURL(blob);
     anchor.target ="_blank";
     anchor.style.display = "none"; // just to be safe!
