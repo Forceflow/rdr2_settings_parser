@@ -2,9 +2,10 @@
 <html lang="en-US">
 <head>
 <title>RDR2 system.xml Settings Parser (a work in progress)</title>
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script src="rdr2_parser.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
 <meta charset="utf-8"/>
 </head>
 <body>
@@ -18,18 +19,13 @@
 <li>If you like what I do, <a href="http://paypal.me/forceflow">buy</a> me a <s>coffee</s> more games.</li>
 </ul>
 </p>
-<p><small><b>Update: 08/11 1:32 GMT: </b>Fixed some parsing bugs (thanks to the folks at ResetEra!).</small></p>
+<p><small><b>Update: 08/11 1:32 GMT: </b>Better parsing of screen scaling, added file from disk option, icons.</small></p>
 <p></p>
 <br/>
 <table border=1>
 <tr>
 <td align="center" colspan="2">
-<button onClick="parse()">CONVERT XML TO NICE TEXT BLOCK</button>
-</td>
-</tr>
-<tr>
-<td align="center" colspan="2">
-<button onClick="loadExample()">Load example config</button>
+<button onClick="parse()"><img src="img/cog.png"> CONVERT XML TO NICE TEXT BLOCK</button>
 </td>
 </tr>
 <tr>
@@ -41,9 +37,17 @@
 <tr>
 <td align="center">
 <strong>Input: system.xml</strong>
+</br>
+</br>
+<button id="filebutton" onclick="document.getElementById('file').click();"><img src="img/open.png"> Open from disk</button>
+<input type="file" style="display:none;" accept=".xml" onchange="loadFile(event)" id="file">
+<button onClick="loadExample()"><img src="img/example.png"> Load example</button>
 </td>
 <td align="center">
-<strong>Output: Parsed settings <button onClick="copyclipboard()">Copy to clipboard</button></strong>
+<strong>Output: Parsed settings</strong>
+</br>
+</br>
+<button onClick="copyclipboard()"><img src="img/clipboard.png"> Copy to clipboard</button>
 </td>
 </tr>
 <tr>
@@ -51,7 +55,7 @@
 <textarea rows="30" cols="60" id="inifile">(Paste the contents of your system.xml file here)</textarea>
 </td>
 <td>
-<textarea readonly rows="30" cols="60" id="parsed" style="background-color: rgb(235, 235, 235)">(A nicely formatted text block will appear here.)</textarea>
+<textarea readonly rows="30" cols="60" id="parsed" style="background-color: rgb(235, 235, 235)">(A nicely formatted text block will appear here)</textarea>
 </td>
 </tr>
 </table>

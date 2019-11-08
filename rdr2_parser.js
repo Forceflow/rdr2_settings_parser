@@ -173,14 +173,21 @@ function writeSettings() {
 }
 
 function parse() {
+	// Clear value
 	$("#parsed").val('');
+	// Attempt to parse input
 	parseXML();
+	// Catch invalid XML
 	if (!valid_xml) {
-		writeLine("No XML or invalid XML pasted. Make sure you paste the full contents of your settings.xml file in the area on the left!");
+		if($('textarea#inifile').val() == "(Paste the contents of your system.xml file here)"){
+			writeLine("(A nicely formatted text block will appear here)");
+		} else {
+			writeLine("Could not parse your input. Make sure you paste the full contents of your settings.xml file in the area on the left!");
+		}
 		return;
 	}
+	// All good, let's extract settings
 	writeSettings();
-
 }
 
 function loadExample() {
@@ -194,3 +201,21 @@ function copyclipboard(){
 	$("#parsed").select();
 	document.execCommand('copy');
 }
+
+var loadFile = function (event) {
+	var reader = new FileReader();
+	console.log(event);
+	reader.onload = function () {
+		$("#parsed").val("");
+		$('textarea#inifile').val(reader.result);
+		parse();
+	};
+	reader.onerror = function () {
+		$('textarea#inifile').val("(Something went wrong trying to load your XML file from disk. Try just pasting the contents here.)");
+	}
+	reader.readAsText(event.target.files[0]);
+};
+
+
+
+

@@ -1,0 +1,9 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10pt;
+}
+
+input[type=file] { 
+    width: 200px;
+    background-color: rgb(236, 236, 236);
+}
