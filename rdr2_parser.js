@@ -6,7 +6,6 @@
 var $xml;
 var valid_xml = true;
 
-console.log(new Date());
 // define value -> setting translation
 var MAP_ANISO = {}; MAP_ANISO["0"] = "Off"; MAP_ANISO["1"] = "2x"; MAP_ANISO["2"] = "4x"; MAP_ANISO["3"] = "8x"; MAP_ANISO["4"] = "16x";
 var REFL_MSAA = {}; REFL_MSAA["0"] = "Off"; REFL_MSAA["1"] = "2x"; REFL_MSAA["2"] = "4x"; REFL_MSAA["3"] = "8x";
