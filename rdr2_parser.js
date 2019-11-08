@@ -167,8 +167,12 @@ function writeSettings() {
 	writeLine("Decal Quality: " + decal);
 	writeLine("Fur Quality: " + fur);
 
-	writeLine(" ");
-	writeLine("Generated with Forceflow's RDR2 settings parser");
+	// Add little flair footer
+	if ($("#flair").is(":checked")) { 
+		writeLine(" ");
+		writeLine("Generated with Forceflow's RDR2 settings parser (https://bit.ly/2oZlIuy)");
+	}
+	// Close quote tags if necessary
 	if ($("#quote").is(":checked")) { writeLine("[/QUOTE]"); }
 }
 
