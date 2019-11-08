@@ -1,0 +1,33 @@
+// A win on AMD cards?
+<asyncComputeEnabled value="false" />
+// Probably should leave this to true
+<transferQueuesEnabled value="true" />
+// Motion blur factor?
+<motionBlurLimit value="16.000000" />
+// Sub Surface reflection for water?
+<waterReflectionSSR value="true" />
+// Amount of texture atlasses/chunk supdated per frame?
+<maxTexUpgradesPerFrame value="5" />
+<directionalShadowsAlpha value="false" />
+<worldHeightShadowQuality value="0.660000" />
+<directionalScreenSpaceShadowQuality value="0.660000" />
+<ambientMaskVolumesHighPrecision value="true" />
+// I think this only disables the visual effects of damage - won't make you invincible :)
+<damageModelsDisabled value="false" />
+<ssaoType value="0" />
+// SSDO = Screen Space Directional Occlusion (an alternative to SSAO?)
+<ssdoSampleCount value="4" />
+<ssdoUseDualRadii value="false" />
+<ssdoResolution>kSettingLevel_Low</ssdoResolution>
+<ssdoTAABlendEnabled value="true" />
+// SSRO? Screen Space ... Rays? Occlusion? Your guess is as good as mine
+<ssroSampleCount value="2" />
+// Don't like little specks of light in your snow?
+<snowGlints value="true" />
+// Globillum probes update rate?
+<probeRelightEveryFrame value="false" />
+// Pedestrian and vehicle LoD? Does 0 mean that by default, it always uses the high q model?
+<pedLodBias value="0.000000" />
+<vehicleLodBias value="0.000000" />
+// Anoter sub surface scattering setting?
+<deepsurfaceQuality>kSettingLevel_Ultra</deepsurfaceQuality> 

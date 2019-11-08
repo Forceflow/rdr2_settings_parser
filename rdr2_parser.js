@@ -37,6 +37,15 @@ function bool_to_onoff(value) {
 	return "undefined";
 }
 
+function resolutionScale(value){
+	// string is always of form "ModeXoY"
+	numbers = value.match(/\d+/g);
+	if(numbers.length != 2){return value;} // More than 2 numbers found. I'm out, just return that value.
+	var ratio = parseFloat(numbers[0]) / parseFloat(numbers[1]);
+	var percentage = Math.round((ratio*100));
+	return percentage + "%";
+}
+
 function watcharea() {
 	$('textarea#inifile').on('change', function () {parse();});
 	$('textarea#inifile').keyup(function () {parse();});
@@ -103,7 +112,7 @@ function writeSettings() {
 	var water_refraction = getTextfromXML("waterRefractionQuality").split("_")[1];
 	var water_reflection = getTextfromXML("waterReflectionQuality").split("_")[1];
 	var water_physics_quality = range_to_percent(getValuefromXML("waterSimulationQuality"),0,4);
-	var res_scale = getTextfromXML("scalingMode").split("_")[1]; // TODO: parse this better
+	var res_scale = resolutionScale(getTextfromXML("scalingMode").split("_")[1]);
 	var taa_sharp = range_to_percent(getValuefromXML("sharpenIntensity"),0,1);
 	var motion_blur = bool_to_onoff(getValuefromXML("motionBlur"));
 	var refl_msaa = MAP_ANISO[getValuefromXML("reflectionMSAA")];
