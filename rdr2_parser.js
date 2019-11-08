@@ -180,3 +180,8 @@ function loadExample() {
 	client.onreadystatechange = function () { $('textarea#inifile').val(client.responseText); parse(); }
 	client.send();
 }
+
+function copyclipboard(){
+	$("#parsed").select();
+	document.execCommand('copy');
+}
