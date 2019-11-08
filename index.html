@@ -23,18 +23,6 @@
 <p></p>
 <br/>
 <table border=1>
-<tr>
-<td align="center" colspan="2">
-<button onClick="parse()"><img src="img/cog.png"> CONVERT XML TO NICE TEXT BLOCK</button>
-</td>
-</tr>
-<tr>
-  <td align="center" colspan="2">
-  Hide advanced settings when locked: <input type="checkbox" id="hide_advanced" onclick="parse()">
-  Wrap in [QUOTE] tags: <input type="checkbox" id="quote" onclick="parse()">
-  </td>
-  </tr>
-<tr>
 <td align="center">
 <strong>Input: system.xml</strong>
 </br>
@@ -47,6 +35,7 @@
 <strong>Output: Parsed settings</strong>
 </br>
 </br>
+<button onClick="parse()"><img src="img/cog.png"> Convert XML</button> 
 <button onClick="copyclipboard()"><img src="img/clipboard.png"> Copy to clipboard</button>
 </td>
 </tr>
@@ -58,6 +47,13 @@
 <textarea readonly rows="30" cols="60" id="parsed" style="background-color: rgb(235, 235, 235)">(A nicely formatted text block will appear here)</textarea>
 </td>
 </tr>
+<tr>
+    <td align="center" colspan="2">
+    Hide advanced settings when locked: <input type="checkbox" id="hide_advanced" onclick="parse()">
+    Wrap in [QUOTE] tags: <input type="checkbox" id="quote" onclick="parse()">
+    </td>
+    </tr>
+  <tr>
 </table>
 
 <script type="text/javascript">
