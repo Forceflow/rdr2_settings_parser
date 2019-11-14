@@ -131,6 +131,9 @@ function writeSettings() {
 	var decal = getTextfromXML("decalQuality").split("_")[1];
 	var fur = getTextfromXML("furDisplayQuality").split("_")[1];
 	var tree_tessellation = bool_to_onoff(getValuefromXML("treeTessellationEnabled"));
+	// Unlisted settings
+	var async = bool_to_onoff(getValuefromXML("asyncComputeEnabled"));
+	var snowglints = bool_to_onoff(getValuefromXML("snowGlints"));
 
 	// WRITE EVERYTHING (NORMAL MODE)
 	if ($("#quote").is(":checked")) { writeLine("[QUOTE]"); }
@@ -151,7 +154,6 @@ function writeSettings() {
 	writeLine("Particles: " + particle);
 	writeLine("Tessellation: " + tessellation);
 	writeLine("FXAA: " + fxaa + ", TAA: " + taa + ", MSAA: " + msaa);
-	if (locked == "true" && $("#hide_advanced").is(":checked")) { if ($("#quote").is(":checked")) { writeLine("[/QUOTE]"); } return; } // we stop here: advanced settings have been locked.
 	writeLine("");
 	writeLine("Near Volumetrics Quality: " + near_volum);
 	writeLine("Far Volumetric Quality: " + far_volum);
@@ -177,6 +179,12 @@ function writeSettings() {
 	writeLine("Fur Quality: " + fur);
 	writeLine("Tree Tessellation: " + tree_tessellation);
 
+	// Write unlisted settings
+	if ($("#unlisted").is(":checked")) { 
+		writeLine(" ");
+		writeLine("Async compute: " + async)
+		writeLine("Snow glints: " + snowglints)
+	}
 	// Add little flair footer
 	if ($("#flair").is(":checked")) { 
 		writeLine(" ");
