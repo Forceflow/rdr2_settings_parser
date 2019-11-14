@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <rage__fwuiSystemSettingsCollection>
-  <version value="35" />
+  <version value="36" />
   <configSource>kSettingsConfig_Auto</configSource>
   <graphics>
     <tessellation>kSettingLevel_High</tessellation>
     <shadowQuality>kSettingLevel_High</shadowQuality>
     <farShadowQuality>kSettingLevel_High</farShadowQuality>
-    <reflectionQuality>kSettingLevel_High</reflectionQuality>
+    <reflectionQuality>kSettingLevel_Medium</reflectionQuality>
     <mirrorQuality>kSettingLevel_High</mirrorQuality>
     <ssao>kSettingLevel_High</ssao>
     <textureQuality>kSettingLevel_Ultra</textureQuality>
@@ -32,19 +32,19 @@
     <motionBlurLimit value="16.000000" />
     <particleLightingQuality>kSettingLevel_High</particleLightingQuality>
     <waterReflectionSSR value="true" />
-    <waterRefractionQuality>kSettingLevel_High</waterRefractionQuality>
+    <waterRefractionQuality>kSettingLevel_Medium</waterRefractionQuality>
     <waterReflectionQuality>kSettingLevel_High</waterReflectionQuality>
     <waterSimulationQuality value="2" />
-    <waterLightingQuality>kSettingLevel_Ultra</waterLightingQuality>
+    <waterLightingQuality>kSettingLevel_High</waterLightingQuality>
     <furDisplayQuality>kSettingLevel_High</furDisplayQuality>
     <maxTexUpgradesPerFrame value="5" />
-    <shadowGrassShadows>kSettingLevel_High</shadowGrassShadows>
-    <shadowParticleShadows value="true" />
+    <shadowGrassShadows>kSettingLevel_Medium</shadowGrassShadows>
+    <shadowParticleShadows value="false" />
     <shadowLongShadows value="true" />
     <directionalShadowsAlpha value="false" />
     <worldHeightShadowQuality value="0.660000" />
     <directionalScreenSpaceShadowQuality value="0.660000" />
-    <ambientMaskVolumesHighPrecision value="true" />
+    <ambientMaskVolumesHighPrecision value="false" />
     <scatteringVolumeQuality>kSettingLevel_High</scatteringVolumeQuality>
     <volumetricsRaymarchQuality>kSettingLevel_High</volumetricsRaymarchQuality>
     <volumetricsLightingQuality>kSettingLevel_High</volumetricsLightingQuality>
@@ -52,25 +52,26 @@
     <terrainShadowQuality>kSettingLevel_High</terrainShadowQuality>
     <damageModelsDisabled value="false" />
     <decalQuality>kSettingLevel_High</decalQuality>
-    <ssaoFullScreenEnabled value="true" />
+    <ssaoFullScreenEnabled value="false" />
     <ssaoType value="0" />
     <ssdoSampleCount value="4" />
     <ssdoUseDualRadii value="false" />
     <ssdoResolution>kSettingLevel_Low</ssdoResolution>
     <ssdoTAABlendEnabled value="true" />
     <ssroSampleCount value="2" />
-    <snowGlints value="true" />
+    <snowGlints value="false" />
     <POMQuality>kSettingLevel_High</POMQuality>
     <probeRelightEveryFrame value="false" />
     <scalingMode>kSettingScale_Mode1o1</scalingMode>
     <reflectionMSAA value="0" />
     <lodScale value="1.000000" />
-    <grassLod value="2.000000" />
+    <grassLod value="2.250000" />
     <pedLodBias value="0.000000" />
     <vehicleLodBias value="0.000000" />
     <sharpenIntensity value="1.000000" />
     <treeQuality>kSettingLevel_High</treeQuality>
-    <deepsurfaceQuality>kSettingLevel_Ultra</deepsurfaceQuality>
+    <deepsurfaceQuality>kSettingLevel_Low</deepsurfaceQuality>
+    <treeTessellationEnabled value="false" />
   </advancedGraphics>
   <video>
     <adapterIndex value="0" />
@@ -82,9 +83,9 @@
     <refreshRateNumerator value="144" />
     <refreshRateDenominator value="1" />
     <windowed value="0" />
-    <vSync value="1" />
-    <tripleBuffered value="true" />
-    <pauseOnFocusLoss value="false" />
+    <vSync value="0" />
+    <tripleBuffered value="false" />
+    <pauseOnFocusLoss value="true" />
     <constrainMousePointer value="false" />
   </video>
   <videoCardDescription>NVIDIA GeForce RTX 2070 SUPER</videoCardDescription>
