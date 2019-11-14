@@ -130,6 +130,7 @@ function writeSettings() {
 	var pom = getTextfromXML("POMQuality").split("_")[1];
 	var decal = getTextfromXML("decalQuality").split("_")[1];
 	var fur = getTextfromXML("furDisplayQuality").split("_")[1];
+	var tree_tessellation = bool_to_onoff(getValuefromXML("treeTessellationEnabled"));
 
 	// WRITE EVERYTHING (NORMAL MODE)
 	if ($("#quote").is(":checked")) { writeLine("[QUOTE]"); }
@@ -174,6 +175,7 @@ function writeSettings() {
 	writeLine("Parallax Occlusion Mapping Quality: " + pom);
 	writeLine("Decal Quality: " + decal);
 	writeLine("Fur Quality: " + fur);
+	writeLine("Tree Tessellation: " + tree_tessellation);
 
 	// Add little flair footer
 	if ($("#flair").is(":checked")) { 
