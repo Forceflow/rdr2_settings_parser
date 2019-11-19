@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <rage__fwuiSystemSettingsCollection>
-  <version value="36" />
+  <version value="37" />
   <configSource>kSettingsConfig_Auto</configSource>
   <graphics>
     <tessellation>kSettingLevel_High</tessellation>
@@ -35,16 +35,16 @@
     <waterRefractionQuality>kSettingLevel_Medium</waterRefractionQuality>
     <waterReflectionQuality>kSettingLevel_High</waterReflectionQuality>
     <waterSimulationQuality value="2" />
-    <waterLightingQuality>kSettingLevel_High</waterLightingQuality>
+    <waterLightingQuality>kSettingLevel_Ultra</waterLightingQuality>
     <furDisplayQuality>kSettingLevel_High</furDisplayQuality>
     <maxTexUpgradesPerFrame value="5" />
     <shadowGrassShadows>kSettingLevel_Medium</shadowGrassShadows>
-    <shadowParticleShadows value="false" />
+    <shadowParticleShadows value="true" />
     <shadowLongShadows value="true" />
     <directionalShadowsAlpha value="false" />
     <worldHeightShadowQuality value="0.660000" />
     <directionalScreenSpaceShadowQuality value="0.660000" />
-    <ambientMaskVolumesHighPrecision value="false" />
+    <ambientMaskVolumesHighPrecision value="true" />
     <scatteringVolumeQuality>kSettingLevel_High</scatteringVolumeQuality>
     <volumetricsRaymarchQuality>kSettingLevel_High</volumetricsRaymarchQuality>
     <volumetricsLightingQuality>kSettingLevel_High</volumetricsLightingQuality>
@@ -59,7 +59,7 @@
     <ssdoResolution>kSettingLevel_Low</ssdoResolution>
     <ssdoTAABlendEnabled value="true" />
     <ssroSampleCount value="2" />
-    <snowGlints value="false" />
+    <snowGlints value="true" />
     <POMQuality>kSettingLevel_High</POMQuality>
     <probeRelightEveryFrame value="false" />
     <scalingMode>kSettingScale_Mode1o1</scalingMode>
@@ -70,7 +70,7 @@
     <vehicleLodBias value="0.000000" />
     <sharpenIntensity value="1.000000" />
     <treeQuality>kSettingLevel_High</treeQuality>
-    <deepsurfaceQuality>kSettingLevel_Low</deepsurfaceQuality>
+    <deepsurfaceQuality>kSettingLevel_High</deepsurfaceQuality>
     <treeTessellationEnabled value="false" />
   </advancedGraphics>
   <video>
@@ -85,7 +85,7 @@
     <windowed value="0" />
     <vSync value="0" />
     <tripleBuffered value="false" />
-    <pauseOnFocusLoss value="true" />
+    <pauseOnFocusLoss value="false" />
     <constrainMousePointer value="false" />
   </video>
   <videoCardDescription>NVIDIA GeForce RTX 2070 SUPER</videoCardDescription>

@@ -3,6 +3,8 @@
 
 // LIVE VERSION AT: http://www.forceflow.be/temp/rdr2_settings_parser/
 
+// GLOBALS
+var CURRENT_XML_VERSION = 37; // the RAGE engine XML version this parser is currently written for
 var $xml;
 var valid_xml = true;
 
@@ -10,6 +12,7 @@ var valid_xml = true;
 var MAP_ANISO = {}; MAP_ANISO["0"] = "Off"; MAP_ANISO["1"] = "2x"; MAP_ANISO["2"] = "4x"; MAP_ANISO["3"] = "8x"; MAP_ANISO["4"] = "16x";
 var REFL_MSAA = {}; REFL_MSAA["0"] = "Off"; REFL_MSAA["1"] = "2x"; REFL_MSAA["2"] = "4x"; REFL_MSAA["3"] = "8x";
 
+// If the HTML loaded, start watching that input area
 $(document).ready(function () {watcharea();});
 
 // get a nice date string
@@ -20,24 +23,19 @@ function getDate(){
 	return date+" "+time;
 }
 
+// convert range to percentage
 function range_to_percent(val,min,max){
 	var percentage = (val-min)/(max-min) * 100;
 	return Math.floor(percentage) + "%";
 }
 
-function getValuefromXML(a) {
-	return $xml.find(a).attr("value");
-}
-
-function getTextfromXML(a) {
-	return $xml.find(a).text();
-}
-
+// convert integer to yes or no answer
 function int_to_yesno(value) {
 	var a = value.trim();
 	if (a == "1") { return "Yes"; } else if(a == "0") { return "No"; } else { return "undefined";}
 }
 
+// convert boolean to on or off
 function bool_to_onoff(value) {
 	var a = value.trim();
 	if (a === 'true') { return "On"; }
@@ -45,8 +43,18 @@ function bool_to_onoff(value) {
 	return "undefined";
 }
 
+// get value from the XML (for example, from <motionBlur value="true" />)
+function getValuefromXML(a) {
+	return $xml.find(a).attr("value");
+}
+
+// get text from XML tag (for example from <waterLightingQuality>kSettingLevel_Ultra</waterLightingQuality>)
+function getTextfromXML(a) {
+	return $xml.find(a).text();
+}
+
+// convert the resolution scale value, which is of the form "ModeXoY", to a percentage
 function resolutionScale(value){
-	// string is always of form "ModeXoY"
 	numbers = value.match(/\d+/g);
 	if(numbers.length != 2){return value;} // More than 2 numbers found. I'm out, just return that value.
 	var ratio = parseFloat(numbers[0]) / parseFloat(numbers[1]);
@@ -54,11 +62,13 @@ function resolutionScale(value){
 	return percentage + "%";
 }
 
+// function to watch the input area for changes
 function watcharea() {
 	$('textarea#inifile').on('change', function () {parse();});
 	$('textarea#inifile').keyup(function () {parse();});
 }
 
+// attempt to parse the current input area content to XML
 function parseXML() {
 	valid_xml = true;
 	var inifile = $('textarea#inifile').val();
@@ -74,10 +84,12 @@ function parseXML() {
 	$xml = $(xmlDoc);
 }
 
+// write a (newline-terminated) line to the output area
 function writeLine(line) {
 	$("#parsed").val($("#parsed").val() + line + "\n");
 }
 
+// fetch and write all parsed settings
 function writeSettings() {
 	// Screen and API settings
 	var width = getValuefromXML("screenWidth");
@@ -134,6 +146,7 @@ function writeSettings() {
 	// Unlisted settings
 	var async = bool_to_onoff(getValuefromXML("asyncComputeEnabled"));
 	var snowglints = bool_to_onoff(getValuefromXML("snowGlints"));
+	var xmlversion = parseInt(getValuefromXML("version"));
 
 	// WRITE EVERYTHING (NORMAL MODE)
 	if ($("#quote").is(":checked")) { writeLine("[QUOTE]"); }
@@ -190,6 +203,13 @@ function writeSettings() {
 		writeLine(" ");
 		writeLine("Generated on " + getDate() + " with Forceflow's RDR2 settings parser (https://bit.ly/2oZlIuy)");
 	}
+	// Check XML version
+	if (($("#checkversion").is(":checked")) && (xmlversion != CURRENT_XML_VERSION)) {
+		writeLine(" ");
+		writeLine("Warning: this parser was written for the latest system.xml version, " + CURRENT_XML_VERSION + ". Your system.xml file is of version " + xmlversion
+		+ ". Update your RDR2 installation to get better / more complete results.")
+	} 
+
 	// Close quote tags if necessary
 	if ($("#quote").is(":checked")) { writeLine("[/QUOTE]"); }
 }
