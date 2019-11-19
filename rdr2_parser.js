@@ -1,4 +1,4 @@
-// RDR2 settings.xml parser by Jeroen Baert (based on my previous GTAV settings parser)
+// RDR2 system.xml parser by Jeroen Baert (based on my previous GTAV settings parser)
 // https://github.com/Forceflow/rdr2_settings_parser
 
 // LIVE VERSION AT: http://www.forceflow.be/temp/rdr2_settings_parser/
@@ -195,8 +195,8 @@ function writeSettings() {
 	// Write unlisted settings
 	if ($("#unlisted").is(":checked")) { 
 		writeLine(" ");
-		writeLine("Async compute: " + async)
-		writeLine("Snow glints: " + snowglints)
+		writeLine("Async Compute: " + async)
+		writeLine("Snow Glints: " + snowglints)
 	}
 	// Add little flair footer
 	if ($("#flair").is(":checked")) { 
@@ -224,7 +224,9 @@ function parse() {
 		if($('textarea#inifile').val() == "(Paste the contents of your system.xml file here)"){
 			writeLine("(A nicely formatted text block will appear here)");
 		} else {
-			writeLine("Could not parse your input. Make sure you paste the full contents of your settings.xml file in the area on the left!");
+			writeLine("Could not parse your input. Make sure you paste the full contents (beginning to end) of your system.xml file in the area on the left!");
+			writeLine("");
+			writeLine("Even one missed '<' or unclosed tag can make the XML invalid and un-parseable. :)");
 		}
 		return;
 	}
