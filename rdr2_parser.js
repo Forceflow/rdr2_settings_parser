@@ -153,10 +153,10 @@ function writeSettings() {
 	writeLine("Volumetrics: " + volumetrics);
 	writeLine("Particles: " + particle);
 	writeLine("Tessellation: " + tessellation);
-	writeLine("FXAA: " + fxaa + ", TAA: " + taa + ", MSAA: " + msaa);
+	writeLine("TAA: " + taa + ", FXAA: " + fxaa + ", MSAA: " + msaa);
 	writeLine("");
-	writeLine("Near Volumetrics Quality: " + near_volum);
-	writeLine("Far Volumetric Quality: " + far_volum);
+	writeLine("Near Volumetrics Resolution: " + near_volum);
+	writeLine("Far Volumetric Resolution: " + far_volum);
 	writeLine("Volumetric Lighting Quality: " + volum_quality);
 	writeLine("Unlocked Volumetric Raymarch Resolution: " + unlock_volum_res);
 	writeLine("Particle Lighting Quality: " + particle_lighting);
