@@ -20,7 +20,7 @@
     <taa>kSettingLevel_High</taa>
     <fxaaEnabled value="false" />
     <msaa value="0" />
-    <graphicsQualityPreset value="0.500000" />
+    <graphicsQualityPreset value="0.550000" />
   </graphics>
   <advancedGraphics>
     <API>kSettingAPI_Vulkan</API>
@@ -30,7 +30,7 @@
     <shadowSoftShadows>kSettingLevel_High</shadowSoftShadows>
     <motionBlur value="true" />
     <motionBlurLimit value="16.000000" />
-    <particleLightingQuality>kSettingLevel_High</particleLightingQuality>
+    <particleLightingQuality>kSettingLevel_Medium</particleLightingQuality>
     <waterReflectionSSR value="true" />
     <waterRefractionQuality>kSettingLevel_Medium</waterRefractionQuality>
     <waterReflectionQuality>kSettingLevel_High</waterReflectionQuality>
@@ -84,7 +84,7 @@
     <refreshRateDenominator value="1" />
     <windowed value="0" />
     <vSync value="0" />
-    <tripleBuffered value="false" />
+    <tripleBuffered value="true" />
     <pauseOnFocusLoss value="false" />
     <constrainMousePointer value="false" />
   </video>
