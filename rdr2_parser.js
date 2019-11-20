@@ -147,6 +147,7 @@ function writeSettings() {
 	var async = bool_to_onoff(getValuefromXML("asyncComputeEnabled"));
 	var snowglints = bool_to_onoff(getValuefromXML("snowGlints"));
 	var xmlversion = parseInt(getValuefromXML("version"));
+	var deepsurface = getTextfromXML("deepsurfaceQuality").split("_")[1];
 
 	// WRITE EVERYTHING (NORMAL MODE)
 	if ($("#quote").is(":checked")) { writeLine("[QUOTE]"); }
@@ -197,6 +198,7 @@ function writeSettings() {
 		writeLine(" ");
 		writeLine("Async Compute: " + async)
 		writeLine("Snow Glints: " + snowglints)
+		writeLine("Deepsurface Quality: " + deepsurface)
 	}
 	// Add little flair footer
 	if ($("#flair").is(":checked")) { 
