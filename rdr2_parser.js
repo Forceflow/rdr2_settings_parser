@@ -203,7 +203,7 @@ function writeSettings() {
 	// Add little flair footer
 	if ($("#flair").is(":checked")) { 
 		writeLine(" ");
-		writeLine("Generated on " + getDate() + " with Forceflow's RDR2 settings parser (https://bit.ly/2oZlIuy)");
+		writeLine("Generated on " + getDate() + " with Forceflow's RDR2 settings parser (https://rdr2.forceflow.be)");
 	}
 	// Check XML version
 	if (($("#checkversion").is(":checked")) && (xmlversion != CURRENT_XML_VERSION)) {

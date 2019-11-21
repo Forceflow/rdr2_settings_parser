@@ -3,4 +3,4 @@ We all looked forward to the release of cowboy-em-up **Red Dead Redemption 2** o
 
 I made a little tool to parse the game's settings file (system.xml) into a nice text block to share settings with in online discussions
 
-* Latest version always live on [http://www.forceflow.be/temp/rdr2_settings_parser/](http://www.forceflow.be/temp/rdr2_settings_parser/)
+* Latest version always live on [https://rdr2.forceflow.be](https://rdr2.forceflow.be)
