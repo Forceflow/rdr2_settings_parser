@@ -25,18 +25,21 @@ function getDate(){
 
 // convert range to percentage
 function range_to_percent(val,min,max){
+	if (typeof val === 'undefined'){return "undefined";}
 	var percentage = (val-min)/(max-min) * 100;
 	return Math.floor(percentage) + "%";
 }
 
 // convert integer to yes or no answer
 function int_to_yesno(value) {
+	if (typeof value === 'undefined'){return "undefined";}
 	var a = value.trim();
 	if (a == "1") { return "Yes"; } else if(a == "0") { return "No"; } else { return "undefined";}
 }
 
 // convert boolean to on or off
 function bool_to_onoff(value) {
+	if (typeof value === 'undefined'){return "undefined";}
 	var a = value.trim();
 	if (a === 'true') { return "On"; }
 	if (a === 'false') { return "Off"; }
@@ -55,6 +58,7 @@ function getTextfromXML(a) {
 
 // convert the resolution scale value, which is of the form "ModeXoY", to a percentage
 function resolutionScale(value){
+	if (typeof value === 'undefined'){return "undefined";}
 	numbers = value.match(/\d+/g);
 	if(numbers.length != 2){return value;} // More than 2 numbers found. I'm out, just return that value.
 	var ratio = parseFloat(numbers[0]) / parseFloat(numbers[1]);
