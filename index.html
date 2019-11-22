@@ -10,7 +10,7 @@
 </head>
 <body>
 <h2>Red Dead Redemption 2 system.xml Settings Parser v0.3</h2>
-<p>Red Dead Redemption 2 for PC has <b>a lot</b> of graphics settings. The presets are system-dependent.</br>
+<p>Red Dead Redemption 2 for PC has <b>a lot</b> of graphics settings. The presets are system-dependent. Some of the RDR2 updates annoyingly <a href="https://www.pcgamer.com/rockstar-please-stop-changing-my-red-dead-2-settings-every-time-theres-a-patch/" target="_blank">reset</a> your settings.</br>
 Taking screenshots of all your settings is clunky, so why not parse that settings file into a nice text block?</p>
 <p>Paste the contents of your RDR2 settings file (found at <em>(My Documents)/Rockstar Games/Red Dead Redemption 2/Settings/system.xml</em>) in the left area</br> and a nicely formatted settings block will appear on the right, ready to copy/paste into your favorite online discussion.</p>
 <p><ul>
@@ -22,7 +22,6 @@ Taking screenshots of all your settings is clunky, so why not parse that setting
 <li>If you like this, <a href="http://paypal.me/forceflow" target="_blank">buy</a> me <s>a coffee</s> more games.</li>
 </ul>
 </p>
-<p><small><b>Update: 22/11 2:28 GMT: </b>Better parsing of old XML files - <a href="https://github.com/Forceflow/rdr2_settings_parser/commits/master" target="_blank">commit log</a>.</small></p>
 <p></p>
 <br/>
 <table border=1>
@@ -46,7 +45,7 @@ Taking screenshots of all your settings is clunky, so why not parse that setting
 </tr>
 <tr>
 <td>
-<textarea rows="30" cols="60" id="inifile">(Paste the contents of your system.xml file here)</textarea>
+<textarea rows="30" cols="60" id="inifile">(Paste the contents of your system.xml file here, or load it from disk)</textarea>
 </td>
 <td>
 <textarea readonly rows="30" cols="60" id="parsed" style="background-color: rgb(235, 235, 235)">(A nicely formatted text block will appear here)</textarea>
@@ -62,6 +61,8 @@ Taking screenshots of all your settings is clunky, so why not parse that setting
 </tr>
 <tr>
 </table>
+
+<p><small><b>Update: 22/11 2:28 GMT: </b>Better parsing of old XML files - <a href="https://github.com/Forceflow/rdr2_settings_parser/commits/master" target="_blank">commit log</a>.</small></p>
 
 <p><small>Made using <a href="https://jquery.com/" target="_blank">jQuery</a>. Icons: <a href="https://commons.wikimedia.org/wiki/GNOME_Desktop_icons" target="_blank">GNOME</a> project.</small></p>
 

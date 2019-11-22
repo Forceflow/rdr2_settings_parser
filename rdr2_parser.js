@@ -227,7 +227,7 @@ function parse() {
 	parseXML();
 	// Catch invalid XML
 	if (!valid_xml) {
-		if($('textarea#inifile').val() == "(Paste the contents of your system.xml file here)"){
+		if($('textarea#inifile').val() == "(Paste the contents of your system.xml file here, or load it from disk)"){
 			writeLine("(A nicely formatted text block will appear here)");
 		} else {
 			writeLine("Could not parse your input. Make sure you paste the full contents (beginning to end) of your system.xml file in the area on the left!");
