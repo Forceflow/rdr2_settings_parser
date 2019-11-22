@@ -141,7 +141,7 @@ function writeSettings() {
 	var motion_blur = bool_to_onoff(getValuefromXML("motionBlur"));
 	var refl_msaa = MAP_ANISO[getValuefromXML("reflectionMSAA")];
 	var geometry_lod = range_to_percent(getValuefromXML("lodScale"), 0.75, 1);
-	var grass_lod = range_to_percent(getValuefromXML("grassLod"),0,3);
+	var grass_lod = range_to_percent(getValuefromXML("grassLod"),0.5,3);
 	var tree = getTextfromXML("treeQuality").split("_")[1];
 	var pom = getTextfromXML("POMQuality").split("_")[1];
 	var decal = getTextfromXML("decalQuality").split("_")[1];
