@@ -124,7 +124,11 @@ function writeSettings() {
 	var msaa = getValuefromXML("msaa");
 	// ADVANCED SETTINGS
 	var locked = getValuefromXML("locked");
-	var near_volum = getTextfromXML("volumetricsLightingQuality").split("_")[1];
+
+	// Doesn't seem to be this value
+	// var near_volum = getTextfromXML("volumetricsLightingQuality").split("_")[1];
+	// Fix 2020-02-22
+	var near_volum = getTextfromXML("scatteringVolumeQuality").split("_")[1];
 	var far_volum = getTextfromXML("volumetricsRaymarchQuality").split("_")[1];
 	var volum_quality = getTextfromXML("volumetricsLightingQuality").split("_")[1];
 	var particle_lighting = getTextfromXML("particleLightingQuality").split("_")[1];
