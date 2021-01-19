@@ -1,7 +1,7 @@
 // RDR2 system.xml parser by Jeroen Baert (based on my previous GTAV settings parser)
 // https://github.com/Forceflow/rdr2_settings_parser
 
-// LIVE VERSION AT: http://www.forceflow.be/temp/rdr2_settings_parser/
+// LIVE VERSION AT: http://rdr2.forceflow.be
 
 // GLOBALS
 var CURRENT_XML_VERSION = 37; // the RAGE engine XML version this parser is currently written for
