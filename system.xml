@@ -17,10 +17,18 @@
     <lightingQuality>kSettingLevel_High</lightingQuality>
     <ambientLightingQuality>kSettingLevel_High</ambientLightingQuality>
     <anisotropicFiltering value="4" />
+    <dlssIndex value="2" />
+    <dlssQuality value="2" />
     <taa>kSettingLevel_High</taa>
     <fxaaEnabled value="false" />
     <msaa value="0" />
-    <graphicsQualityPreset value="0.550000" />
+    <graphicsQualityPreset value="0.500000" />
+    <hdr value="true" />
+    <hdrIntensity value="100" />
+    <hdrPeakBrightness value="1000" />
+    <hdrFilmicMode value="true" />
+    <gamma value="15" />
+    <hdrSettingsMigrated value="true" />
   </graphics>
   <advancedGraphics>
     <API>kSettingAPI_Vulkan</API>
@@ -35,7 +43,7 @@
     <waterRefractionQuality>kSettingLevel_Medium</waterRefractionQuality>
     <waterReflectionQuality>kSettingLevel_High</waterReflectionQuality>
     <waterSimulationQuality value="2" />
-    <waterLightingQuality>kSettingLevel_Ultra</waterLightingQuality>
+    <waterLightingQuality>kSettingLevel_High</waterLightingQuality>
     <furDisplayQuality>kSettingLevel_High</furDisplayQuality>
     <maxTexUpgradesPerFrame value="5" />
     <shadowGrassShadows>kSettingLevel_Medium</shadowGrassShadows>
@@ -68,7 +76,7 @@
     <grassLod value="2.250000" />
     <pedLodBias value="0.000000" />
     <vehicleLodBias value="0.000000" />
-    <sharpenIntensity value="1.000000" />
+    <sharpenIntensity value="4.000000" />
     <treeQuality>kSettingLevel_High</treeQuality>
     <deepsurfaceQuality>kSettingLevel_High</deepsurfaceQuality>
     <treeTessellationEnabled value="false" />
@@ -76,17 +84,20 @@
   <video>
     <adapterIndex value="0" />
     <outputIndex value="0" />
-    <resolutionIndex value="12" />
+    <resolutionIndex value="15" />
     <screenWidth value="1920" />
     <screenHeight value="1080" />
-    <refreshRateIndex value="4" />
+    <resolutionIndexWindowed value="13" />
+    <screenWidthWindowed value="1920" />
+    <screenHeightWindowed value="1080" />
+    <refreshRateIndex value="5" />
     <refreshRateNumerator value="144" />
     <refreshRateDenominator value="1" />
-    <windowed value="0" />
+    <windowed value="2" />
     <vSync value="0" />
-    <tripleBuffered value="true" />
+    <tripleBuffered value="false" />
     <pauseOnFocusLoss value="false" />
     <constrainMousePointer value="false" />
   </video>
-  <videoCardDescription>NVIDIA GeForce RTX 2070 SUPER</videoCardDescription>
+  <videoCardDescription>NVIDIA NVIDIA GeForce RTX 2070 SUPER</videoCardDescription>
 </rage__fwuiSystemSettingsCollection>
