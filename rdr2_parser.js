@@ -8,9 +8,11 @@ var CURRENT_XML_VERSION = 37; // the RAGE engine XML version this parser is curr
 var $xml;
 var valid_xml = true;
 
-// define value -> setting translation
-var MAP_ANISO = {}; MAP_ANISO["0"] = "Off"; MAP_ANISO["1"] = "2x"; MAP_ANISO["2"] = "4x"; MAP_ANISO["3"] = "8x"; MAP_ANISO["4"] = "16x";
-var REFL_MSAA = {}; REFL_MSAA["0"] = "Off"; REFL_MSAA["1"] = "2x"; REFL_MSAA["2"] = "4x"; REFL_MSAA["3"] = "8x";
+// map index to setting (indexes start at 0 in this array)
+var MAP_ANISO = ["Off","2x","4x","8x","16x"];
+var REFL_MSAA = ["Off","2x","4x","8x"];
+var DLSS_INDEX = ["Off", "Auto", "Quality", "Balanced", "Performance", "Ultra Performance"];
+var SCREENMODES = ["Fullscreen", "Windowed", "Borderless"];
 
 // If the HTML loaded, start watching that input area
 $(document).ready(function () {watcharea();});
@@ -54,6 +56,18 @@ function getValuefromXML(a) {
 // get text from XML tag (for example from <waterLightingQuality>kSettingLevel_Ultra</waterLightingQuality>)
 function getTextfromXML(a) {
 	return $xml.find(a).text();
+}
+
+// interpret DLSS settings using dlssIndex and dlssQuality
+// Mapping: 	dlssIndex	dlssQuality		Setting
+// 				0			/				DLSS OFF
+//				1							DLSS Auto
+//				2			2				DLSS Quality
+// 				3			1				DLSS Balanced
+// 				4			0				DLSS Performance
+// 				5			3				DLSS Ultra Performance
+function mapDLSS_setting(dlssIndex, dlssQuality){
+	// this function is unused at the moment, because dlssIndex is enough to map
 }
 
 // convert the resolution scale value, which is of the form "ModeXoY", to a percentage
@@ -100,7 +114,7 @@ function writeSettings() {
 	var height = getValuefromXML("screenHeight");
 	var refreshrate = getValuefromXML("refreshRateNumerator");
 	var vsync = int_to_yesno(getValuefromXML("vSync"));
-	var windowed = int_to_yesno(getValuefromXML("windowed"));
+	var windowed = SCREENMODES[getValuefromXML("windowed")];
 	var triplebuffer = bool_to_onoff(getValuefromXML("tripleBuffered"));
 	var pauseonfocusloss = int_to_yesno(getValuefromXML("pauseOnFocusLoss"));
 	var videocard = getTextfromXML("videoCardDescription");
@@ -119,6 +133,8 @@ function writeSettings() {
 	var volumetrics = getTextfromXML("volumetricsQuality").split("_")[1];
 	var particle = getTextfromXML("particleQuality").split("_")[1];
 	var tessellation = getTextfromXML("tessellation").split("_")[1];
+	var dlss= DLSS_INDEX[getValuefromXML("dlssIndex")];
+	//var dlssQuality = getValuefromXML("dlssQuality");
 	var fxaa = bool_to_onoff(getValuefromXML("fxaaEnabled"));
 	var taa = getTextfromXML("taa").split("_")[1];
 	var msaa = getValuefromXML("msaa");
@@ -160,7 +176,7 @@ function writeSettings() {
 	// WRITE EVERYTHING (NORMAL MODE)
 	if ($("#quote").is(":checked")) { writeLine("[QUOTE]"); }
 	writeLine(videocard + ", " + api);
-	writeLine(width + " x " + height + ", " + refreshrate + "hz, Windowed: " + windowed + ", Vsync: " + vsync + ", Triple: " + triplebuffer);
+	writeLine(width + " x " + height + ", " + refreshrate + "hz, " + windowed + ", Vsync: " + vsync + ", Triple: " + triplebuffer);
 	writeLine("");
 	writeLine("Texture Quality: " + textures);
 	writeLine("Anisotropic Filtering: " + anisotropic);
@@ -175,6 +191,7 @@ function writeSettings() {
 	writeLine("Volumetrics Quality: " + volumetrics);
 	writeLine("Particle Quality: " + particle);
 	writeLine("Tessellation Quality: " + tessellation);
+	writeLine("DLSS: " + dlss)
 	writeLine("TAA: " + taa + ", FXAA: " + fxaa + ", MSAA: " + msaa);
 	writeLine("");
 	writeLine("Near Volumetric Resolution: " + near_volum);
